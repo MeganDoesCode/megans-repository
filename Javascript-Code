@@ -1,0 +1,96 @@
+//Declare button objects
+var boopButton = document.getElementById("boopButton");
+var membersButton = document.getElementById("membersButton");
+var catsButton = document.getElementById("catsButton");
+var dogsButton = document.getElementById("dogsButton");
+
+//Add eventListeners for buttons
+boopButton.addEventListener("click", boop);
+membersButton.addEventListener("click", recruit);
+catsButton.addEventListener("click", trainCats);
+dogsButton.addEventListener("click", trainDogs);
+
+//Declare label object variables
+var boops = document.getElementById("boops");
+var boopsPerSecond = document.getElementById("bps");
+var members = document.getElementById("members");
+var membersCost = document.getElementById("membersCost");
+var cats = document.getElementById("cats");
+var catsCost = document.getElementById("catsCost");
+var dogs = document.getElementById("dogs");
+var dogsCost = document.getElementById("dogsCost");
+
+//Declare int variables
+var boopsInt = parseInt(boops.innerHTML);
+var bpsInt = parseInt(boopsPerSecond.innerHTML);
+var membersInt = parseInt(members.innerHTML);
+var membersCostInt = parseInt(membersCost.innerHTML);
+var catsInt = parseInt(cats.innerHTML);
+var catsCostInt = parseInt(catsCost.innerHTML);
+var dogsInt = parseInt(dogs.innerHTML);
+var dogsCostInt = parseInt(dogsCost.innerHTML);
+
+
+function incrementBps(){
+	//increment boops
+	boopsInt = boopsInt + bpsInt;
+	boops.textContent = boopsInt;
+}
+
+function boop() { //player booped someone manually
+	//increment boops counter
+	boops.textContent = ++boopsInt;
+}
+
+function recruit() { //player recruited people to boop other people
+	//if player has enough currency
+	if(boopsInt >= membersCostInt){
+		//update boops
+		boopsInt = boopsInt - membersCostInt;
+		//increment cost and members number and boopsPerSecond
+		membersInt = ++membersInt;
+		membersCostInt = membersCostInt * .1;
+		bpsInt = bpsInt + membersInt;
+		//update labels
+		members.textContent = membersInt;
+		membersCost.textContent = membersCostInt;
+		boops.textContent = boopsInt;
+		boopsPerSecond.textContent = bpsInt;
+		//run boops per second with timed command
+		setInterval("incrementBps()", 1000);
+	}
+}
+
+function trainCats() { //player trained cats to boop people
+	if(boopsInt >= catsCostInt){
+		//update boops
+		boopsInt = boopsInt - catsCostInt;
+		//increment cost and members number and boopsPerSecond
+		catsInt = ++catsInt;
+		catsCostInt = catsCostInt * .1;
+		bpsInt = bpsInt + catsInt;
+		//update labels
+		cats.textContent = catsInt;
+		catsCost.textContent = catsCostInt;
+		boops.textContent = boopsInt;
+		boopsPerSecond.textContent = bpsInt;
+		//run boops per second with timed command
+		setInterval("incrementBps()", 1000);
+	}
+}
+
+function trainDogs() { //player trained dogs to boop people
+		//update boops
+		boopsInt = boopsInt - dogsCostInt;
+		//increment cost and members number and boopsPerSecond
+		dogsInt = ++dogsInt;
+		dogsCostInt = dogsCostInt * .1;
+		bpsInt = bpsInt + dogsInt;
+		//update labels
+		dogs.textContent = dogsInt;
+		dogsCost.textContent = dogsCostInt;
+		boops.textContent = boopsInt;
+		boopsPerSecond.textContent = bpsInt;
+		//run boops per second with timed command
+		setInterval("incrementBps()", 1000);
+}
