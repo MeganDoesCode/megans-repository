@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- Charset meta is required for html 5 and must be first meta data -->
+		<meta charset="utf-8"/>
+		<!-- keywords used for search engines -->
+		<meta name="keywords" content="game, clicker, idle, incremental, free" />
+		<!-- Title appears in browser tab -->
+		<title>Idle Boop</title>
+		<!-- stylesheet link -->
+		<link href="gameStyle.css" rel="stylesheet" />
+		<!-- script link -->
+		<script src="script.js" async ></script>
+	</head>
+	<body>
+		<header>
+			<h1>Boop people!</h1>
+		</header>
+		<section>
+			<!-- main section -->
+			<label>People booped:</label>
+			<label id="boops">0</label>
+			<br>
+			<label>Boops per second: </label>
+			<label id="bps">0</label>
+			<br><br>
+			<button type="button" id="boopButton" >
+				<img src="finger.png" alt="Boop" width="500px"/>
+			</button>
+		</section>
+		<aside>
+			<!-- upgrades section -->
+			<label>Club members: </label>
+			<label id="members">0</label>
+			<br>
+			<label>Cost: </label>
+			<label id="membersCost">100</label>
+			<br><br>
+			<button type="button" id="membersButton" >
+				<p>Recruit club members</p>
+			</button>
+			<br><br>
+			<label>Trained cats:</label>
+			<label id="cats">0</label>
+			<br>
+			<label>Cost: </label>
+			<label id="catsCost">200</label>
+			<br><br>
+			<button type="button" id="catsButton" >
+				<p>Train cats</p>
+			</button>
+			<br><br>
+			<label>Trained dogs:</label>
+			<label id="dogs">0</label>
+			<br>
+			<label>Cost: </label>
+			<label id="dogsCost">300</label>
+			<br><br>
+			<button type="button" id="dogsButton" >
+				<p>Train dogs</p>
+			</button>
+		</aside>
+		<footer>
+			<p>Game made by Megan 2021</p>
+		</footer>
+	</body>
+</html>
