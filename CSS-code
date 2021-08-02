@@ -1,0 +1,42 @@
+@charset "utf-8";
+html{
+	background-color: indigo;
+	color: white;
+	font-family: sans-serif;
+	box-sizing: border-box;
+	overflow: auto;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+header{
+	width: 100%;
+	background-color: black;
+	padding: 10px;
+}
+section{
+	width: 45%;
+	margin: 10px;
+	font-size: 2em;
+	float: left;
+}
+aside{
+	width: 45%;
+	margin: 10px;
+	font-size: 2em;
+	float: right;
+}
+footer{
+	width: 100%;
+	clear: right;
+	background-color: black;
+	position: fixed;
+	bottom: 0px;
+}
+button{
+	width: 90%;
+	background-color: mediumpurple;
+	font-size: 20pt;
+}
